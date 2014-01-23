@@ -1,0 +1,43 @@
+<!DOCTYPE hibernate-configuration SYSTEM
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.connection.driver_class">
+        com.mysql.jdbc.Driver
+    </property>
+    <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/influx?useUnicode=true&amp;connectionCollation=utf8_general_ci&amp;characterSetResults=utf8</property>
+    <property name="hibernate.connection.username">
+        root
+    </property>
+    <property name="hibernate.connection.password">
+    	influx1234
+    </property>
+     <property name="hibernate.dialect">
+        org.hibernate.dialect.MySQLInnoDBDialect
+    </property>
+    <!-- Use the C3P0 connection pool provider -->
+    <!-- Add by Shockley -->
+    <property name="hibernate.c3p0.min_size">5</property>
+    <property name="hibernate.c3p0.max_size">20</property>
+    <property name="hibernate.c3p0.timeout">300</property>
+    <property name="hibernate.c3p0.max_statements">50</property>
+    <property name="hibernate.c3p0.idle_test_period">3000</property>
+    <!-- Show and print nice SQL on stdout -->
+    <property name="show_sql">false</property>
+    <property name="format_sql">true</property>
+    
+    <mapping class="influx.datasource.dao.LdaAttribute" ></mapping>
+    <mapping class="influx.datasource.dao.Term" ></mapping>
+    <mapping class="influx.datasource.dao.Source" ></mapping>
+    <mapping class="influx.datasource.dao.Relation" ></mapping>
+    <mapping class="influx.datasource.dao.Network" ></mapping>
+	<mapping class="influx.datasource.dao.Forge" ></mapping>
+    <mapping class="influx.datasource.dao.Project" ></mapping>
+    <mapping class="influx.datasource.dao.SfSummary" ></mapping>
+    <mapping class="influx.datasource.dao.SfTopic" ></mapping>
+    <mapping class="influx.datasource.dao.OhlohSummary" ></mapping>
+    <mapping class="influx.datasource.dao.OhlohTag" ></mapping>
+    <mapping class="influx.datasource.dao.OhlohPopularTag" ></mapping>
+    
+  </session-factory>
+</hibernate-configuration>

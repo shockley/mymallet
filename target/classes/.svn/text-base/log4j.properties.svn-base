@@ -1,0 +1,29 @@
+log4j.rootLogger=info, STDOUT, ROLLING_FILE, FILE
+
+#STDOUT
+log4j.appender.STDOUT=org.apache.log4j.ConsoleAppender 
+log4j.appender.STDOUT.threshold=info
+log4j.appender.STDOUT.layout=org.apache.log4j.PatternLayout 
+log4j.appender.STDOUT.layout.ConversionPattern=%5p @ %d [%t] (%F:%L) - %m%n 
+
+
+#ROLLING_FILE
+log4j.appender.ROLLING_FILE=org.apache.log4j.RollingFileAppender 
+log4j.appender.ROLLING_FILE.threshold=info
+log4j.appender.ROLLING_FILE.File=logs/info.log
+log4j.appender.ROLLING_FILE.MaxFileSize=10MB
+log4j.appender.ROLLING_FILE.MaxBackupIndex=10000
+log4j.appender.ROLLING_FILE.layout=org.apache.log4j.PatternLayout 
+log4j.appender.ROLLING_FILE.layout.ConversionPattern=%5p @ %d [%t] (%F:%L) - %m%n
+
+#FILE
+log4j.appender.FILE=org.apache.log4j.FileAppender 
+log4j.appender.FILE.threshold=warn
+log4j.appender.FILE.File=logs/error.log
+log4j.appender.FILE.layout=org.apache.log4j.PatternLayout 
+log4j.appender.FILE.layout.ConversionPattern=%5p @ %d [%t] (%F:%L) - %m%n
+
+#hibernate logger
+log4j.logger.org.hibernate=fatal 
+
+

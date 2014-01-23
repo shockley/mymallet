@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+encoding//src/edu/nudt/influx/lda/MultiLabeledLDA.java=UTF-8
+encoding//src/edu/nudt/influx/lda/StandardLabeledLDA.java=UTF-8
+encoding//src/edu/nudt/influx/lda/StandardLabeledRecomLDA.java=UTF-8
